@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">1786_coursework</string>
+    <string-array name="difficultLevel">
+        <item>Easiest</item>
+        <item>Moderate</item>
+        <item>Strenuous</item>
+    </string-array>
+    <string name="title_activity_add">AddActivity</string>
+</resources>
