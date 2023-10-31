@@ -48,6 +48,15 @@ public class AddActivity extends AppCompatActivity {
                 .allowMainThreadQueries()
                 .build();
 
+        name_hike = findViewById(R.id.name_hike_input);
+        location_hike = findViewById(R.id.location_hike_input);
+        length_hike = findViewById(R.id.length_hike_input);
+        level_hike = findViewById(R.id.level_hike_input);
+        description_hike = findViewById(R.id.description_hike_input);
+        parking_check = findViewById(R.id.parking_hike_input);
+        parking_true = findViewById(R.id.parking_hike_true);
+
+
         //Date Picker for Date Hike
         datePicker = findViewById(R.id.date_picker);
         datePicker.setOnClickListener(new View.OnClickListener() {
@@ -69,13 +78,6 @@ public class AddActivity extends AppCompatActivity {
     }
 
     private void getAllInputs() {
-        name_hike = findViewById(R.id.name_hike_input);
-        location_hike = findViewById(R.id.location_hike_input);
-        length_hike = findViewById(R.id.length_hike_input);
-        level_hike = findViewById(R.id.level_hike_input);
-        description_hike = findViewById(R.id.description_hike_input);
-        parking_check = findViewById(R.id.parking_hike_input);
-        parking_true = findViewById(R.id.parking_hike_true);
 
         parking_check.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

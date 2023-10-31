@@ -55,15 +55,12 @@ public class HikeLogAdapter extends RecyclerView.Adapter<HikeLogAdapter.HikeLogV
 
     public static class HikeLogViewHolder extends RecyclerView.ViewHolder {
         TextView hikeName, hikeLocation, hikeDate, hikeLength;
-        Button editButton, deleteButton;
         public HikeLogViewHolder(@NonNull View itemView) {
             super(itemView);
             hikeName = itemView.findViewById(R.id.view_name_hike);
             hikeLocation = itemView.findViewById(R.id.view_location_hike);
             hikeDate = itemView.findViewById(R.id.view_date_hike);
             hikeLength = itemView.findViewById(R.id.view_length_hike);
-            editButton = itemView.findViewById(R.id.button_edit);
-            deleteButton = itemView.findViewById(R.id.button_delete);
 
         }
     }

@@ -1,85 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="2dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="2dp"
+    android:background="@drawable/card_edit"
+    app:cardBackgroundColor="#7CE1E1E1">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="758dp"
-        android:layout_height="233dp"
-        android:layout_marginStart="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/card_edit" />
-
-    <Button
-        android:id="@+id/button_edit"
-        android:layout_width="177dp"
-        android:layout_height="113dp"
-        android:layout_marginStart="30dp"
-        android:background="@color/gray_main"
-        android:text="EDIT"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_delete"
-        android:layout_width="179dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/red_main"
-        android:text="DELETE"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/button_edit" />
-
-    <TextView
-        android:id="@+id/view_name_hike"
-        android:layout_width="309dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
-        android:text="Name Hike"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <LinearLayout
-        android:layout_width="655dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="25dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/view_name_hike">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <TextView
-            android:id="@+id/view_location_hike"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:text="Location"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:id="@+id/view_name_hike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/red_main"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="77dp"
+            tools:layout_editor_absoluteY="241dp" />
 
-        <TextView
-            android:id="@+id/view_length_hike"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:text="Length hike"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+        <LinearLayout
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
 
-        <TextView
-            android:id="@+id/view_date_hike"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:text="Date of hike"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+            <TextView
+                android:id="@+id/view_location_hike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/view_length_hike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/view_date_hike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

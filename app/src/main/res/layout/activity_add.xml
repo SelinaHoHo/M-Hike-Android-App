@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddActivity"
+    android:background="@drawable/hiking_image"
     tools:layout_editor_absoluteX="-1dp"
     tools:layout_editor_absoluteY="13dp">
 
@@ -238,9 +239,11 @@
 
     <TextView
         android:id="@+id/date_picker"
-        android:layout_width="351dp"
-        android:layout_height="29dp"
+        android:layout_width="348dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
         android:text="Click here to select the date"
         android:textColor="@color/red_main"
         app:layout_constraintEnd_toEndOf="parent"

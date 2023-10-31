@@ -1,11 +1,11 @@
 package com.example.a1786_coursework;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.a1786_coursework.adapter.HikeLogAdapter;
 import com.example.a1786_coursework.database.AppDatabase;
@@ -23,9 +24,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
+    private AppDatabase appDatabase;
     RecyclerView recyclerView;
     FloatingActionButton add_hike_button;
+
+    Button delete_all_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        AppDatabase appDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "hikeLog_db")
+        appDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "hikeLog_db")
                 .allowMainThreadQueries()
                 .build();
 
@@ -60,6 +63,30 @@ public class MainActivity extends AppCompatActivity {
         });
         recyclerView.setAdapter(adapter);
 
+        delete_all_button = findViewById(R.id.button_delete_all);
+
+        delete_all_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Are you sure to DELETE ALL HIKE LOGS ?")
+                        .setCancelable(true)
+                        .setPositiveButton("DELETE", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                deleteAll();
+                            }
+                        })
+                        .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
 
         add_hike_button = findViewById(R.id.add_hike_button);
         add_hike_button.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +112,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void deleteAll(){
+        appDatabase.hikeDao().deleteAllHikes();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }
