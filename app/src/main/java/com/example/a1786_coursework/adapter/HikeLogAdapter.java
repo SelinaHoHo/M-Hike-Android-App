@@ -53,6 +53,10 @@ public class HikeLogAdapter extends RecyclerView.Adapter<HikeLogAdapter.HikeLogV
         return hikeLogs.size();
     }
 
+    public void setHikeLogs(List<HikeLog> hikeLogs) {
+        this.hikeLogs = hikeLogs;
+    }
+
     public static class HikeLogViewHolder extends RecyclerView.ViewHolder {
         TextView hikeName, hikeLocation, hikeDate, hikeLength;
         public HikeLogViewHolder(@NonNull View itemView) {
